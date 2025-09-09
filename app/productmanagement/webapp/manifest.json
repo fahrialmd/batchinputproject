@@ -117,24 +117,13 @@
                   },
                   "actions": {
                     "ImportProducts": {
-                      "press": "productmanagement.webapp.ext.Upload.showUploadDialog",
+                      "press": "productmanagement.ext.controller.Upload.showUploadDialog",
                       "text": "Import Products",
                       "enabled": true
                     }
                   }
                 }               
-              },
-              "content": {
-                "header": {
-                  "actions": {
-                    "ImportProducts": {
-                      "press": "productmanagement.webapp.ext.Upload.showUploadDialog",
-                      "text": "Import Products",
-                      "enabled": true
-                    }
-                  }
-                }
-              }
+              }              
             }
           }
         },

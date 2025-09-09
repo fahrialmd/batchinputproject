@@ -7,9 +7,11 @@ import java.util.Map;
 import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
 import com.alibaba.excel.util.ListUtils;
+import com.sap.cds.ql.Upsert;
 import com.sap.cds.services.persistence.PersistenceService;
 
 import cds.gen.adminservice.Products;
+import static cds.gen.adminservice.AdminService_.PRODUCTS;
 
 public class NoModelDataListener extends AnalysisEventListener<Map<Integer, String>> {
 
@@ -37,8 +39,7 @@ public class NoModelDataListener extends AnalysisEventListener<Map<Integer, Stri
     }
 
     private void saveData() {
-        for (int i = 0; i < cachedDataList.size(); i++) {
-            Map<Integer, String> map = cachedDataList.get(i);
+        for (Map<Integer, String> map : cachedDataList) {
             Products product = Products.create();
 
             for (Integer key : map.keySet()) {
@@ -60,8 +61,9 @@ public class NoModelDataListener extends AnalysisEventListener<Map<Integer, Stri
                         break;
                 }
             }
-            //     //  Products updatedProducts = adminService.run(Update.entity(PRODUCTS).data(product)).single(Products.class);
-            //     db.run(Upsert.into(PRODUCTS).entry(product));
+
+            // FIXED: Uncommented and corrected the database save operation
+            db.run(Upsert.into(PRODUCTS).entry(product));
         }
     }
 }

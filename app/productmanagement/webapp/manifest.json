@@ -114,16 +114,19 @@
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
                     "type": "ResponsiveTable"
-                  },
+                  }
+                }
+              },
+              "content": {
+                "header": {
                   "actions": {
                     "ImportProducts": {
                       "press": "productmanagement.ext.controller.Upload.showUploadDialog",
-                      "text": "Import Products",
-                      "enabled": true
+                      "text": "Import Products"
                     }
                   }
-                }               
-              }              
+                }
+              }
             }
           }
         },

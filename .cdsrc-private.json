@@ -10,7 +10,7 @@
           "instance": "batchinputproject-cds-db",
           "key": "batchinputproject-cds-db-key"
         },
-        "kind": "hana-cloud",
+        "kind": "hana",
         "vcap": {
           "name": "db"
         }

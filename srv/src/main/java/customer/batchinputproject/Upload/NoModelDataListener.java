@@ -59,6 +59,9 @@ public class NoModelDataListener extends AnalysisEventListener<Map<Integer, Stri
                     case 4:
                         product.setPrice(new BigDecimal(map.get(key)));
                         break;
+                    case 5:
+                        product.setCurrencyCode(map.get(key));
+                        break;
                 }
             }
 
